@@ -1,0 +1,259 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #181818;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== TOP SECTION ===== */
+.top {
+  background: linear-gradient(135deg, #0088ff 0%, #0066ff 100%);
+  color: white;
+  padding: 20px 20px;
+  min-height: 200px;
+}
+
+/* Status Bar */
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.time {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.left-section .action {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  gap: 5px;
+}
+
+.left-section .action i {
+  font-size: 18px;
+}
+
+.left-section .action p {
+  font-size: 10px;
+  color: white;
+}
+
+.left-section .action:hover {
+  transform: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.icons {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+}
+
+/* QR Box */
+.qr-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 0;
+  text-align: center;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+}
+
+.amount {
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  padding: 15px 0 10px 0;
+  width: 100%;
+}
+
+.qr-box img {
+  width: 100%;
+  height: auto;
+  flex: 1;
+  object-fit: cover;
+  border-radius: 0 0 18px 18px;
+}
+
+/* ===== BOTTOM SECTION ===== */
+.bottom {
+  flex: 1;
+  padding: 30px 20px;
+  overflow-y: auto;
+  background: #f8f9fa;
+}
+
+/* Actions Grid */
+.actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 15px 10px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.action:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 136, 255, 0.3);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 136, 255, 0.1),
+    rgba(0, 102, 255, 0.1)
+  );
+}
+
+.action i {
+  font-size: 24px;
+  background: linear-gradient(135deg, #0088ff, #0066ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.action p {
+  font-size: 11px;
+  font-weight: 500;
+  text-align: center;
+  color: #333;
+  line-height: 1.2;
+}
+
+/* History Section */
+.history {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.history::before {
+  content: "Historique";
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 13px;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item span:first-child {
+  color: #666;
+  font-weight: 500;
+}
+
+.pos {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.neg {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* Scrollbar Styling */
+.bottom::-webkit-scrollbar {
+  width: 6px;
+}
+
+.bottom::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.bottom::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.bottom::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .app {
+    border-radius: 20px;
+  }
+
+  .actions {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .action {
+    padding: 12px 8px;
+  }
+
+  .action i {
+    font-size: 20px;
+  }
+
+  .action p {
+    font-size: 10px;
+  }
+}
