@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: rgb(244, 235, 236);
+     background-color: rgb(244, 235, 236);
 }
 header{
      display: flex;
@@ -10,13 +10,14 @@ header{
     box-sizing: border-box;
     width: 100%;
     font-size: 20px;
+    background-color: rgb(244, 235, 236);
 }
-.page0{
+.page{
     gap: 80px;
     display: flex;
     justify-content: space-between;
     list-style-type: none;
-
+    background-color: rgb(244, 235, 236);
 }
  header .divlien a{
     text-decoration: none; 
@@ -90,3 +91,11 @@ section.a-propos{
     gap: 45px;
     background-color: azure;
 }
+h2{
+     display: flex;
+     justify-content: space-around;
+     text-align: center;
+     margin-top: 20px;
+     font-family: 'Courier New', Courier, monospace;
+}
+
